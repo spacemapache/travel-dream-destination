@@ -59,6 +59,8 @@
         justify-content: space-evenly;
         margin-top: -50px;
         font-family: var(--second-font);
+        background-color: black;
+        opacity: 0.9;
       }
 
       .navigation-links a {
@@ -73,24 +75,37 @@
         border: 2px solid red;
       }
 
-      .aboutJapan img {
+      .aboutJapanDetails small {
+        margin-top: 10px;
+        font-family: var(--second-font);
+        font-size: 12px;
+        font-style: italic;
+      }
+
+      .aboutJapanDetails small a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .aboutJapanSection img {
         margin: 30px;
         border: 2px solid red;
       }
 
-      .aboutJapan {
+      .aboutJapanSection {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         border: 2px solid blue;
+        background-color: white;
       }
 
-      .aboutJapan h2 {
+      .aboutJapanSection h2 {
         font-size: 40px;
         font-family: var(--second-font);
       }
 
-      .aboutJapan p {
+      .aboutJapanSection p {
         text-align: center;
         margin: 10px;
         font-size: 15px;
@@ -145,7 +160,7 @@
           </div>
         </div>
 
-        <div class="aboutJapan">
+        <div class="aboutJapanSection">
           <img
             src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/827/original/aboutjapan-unsplash.jpg?1712257895"
             class="aboutJapanPhoto"
@@ -162,12 +177,11 @@
               "mainland"), Shikoku, Kyushu, and Okinawa. Tokyo is the country's
               capital and largest city, followed by Yokohama, Osaka, Nagoya,
               Sapporo, Fukuoka, Kobe, and Kyoto.
-              <br />
-              <small>
-                Source by
-                <a href="https://en.wikipedia.org/wiki/Japan">Wikipedia</a>
-              </small>
             </p>
+            <small>
+              Source by
+              <a href="https://en.wikipedia.org/wiki/Japan">Wikipedia</a>
+            </small>
           </div>
         </div>
         <!-- destinations: tokyo, osaka, kyoto and hokkaido -->
@@ -225,10 +239,30 @@
         </div>
 
         <div class="grid-container">
-          <div id="attractionGrid">Universal Studios Japan</div>
-          <div id="attractionGrid">Osaka Castle</div>
-          <div id="attractionGrid">Dotonbori</div>
-          <div id="attractionGrid">Osaka Aquarium Kaiyukan</div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/862/original/usj.jpg?1712268229"
+            />
+            Universal Studios Japan
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/863/original/osaka-castle.jpg?1712268339"
+            />
+            Osaka Castle
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/859/original/dotonbori.jpg?1712268136"
+            />
+            Dotonbori
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154"
+            />
+            Osaka Aquarium Kaiyukan
+          </div>
           <div id="attractionGrid">Shinsaibashi-Suji Shopping Street</div>
           <div id="attractionGrid">Hozenji</div>
         </div>
