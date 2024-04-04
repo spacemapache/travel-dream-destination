@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --main-color: white;
+      }
+
+      .container {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .japan-website {
+        max-width: 1500px;
+      }
+
+      .japan-header {
+        width: 100%;
+        height: 500px;
+        background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/830/original/japan-hero.jpg?1712258370");
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      h1 {
+        font-size: 70px;
+        padding: 80px;
+      }
+
+      .navigation-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: -50px;
+      }
+
+      .navigation-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+      }
+
+      .aboutJapanDetails {
+        margin: 10px;
+        border: 2px solid red;
+      }
+
+      .aboutJapan img {
+        margin: 30px;
+        border: 2px solid red;
+      }
+
+      .aboutJapan {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border: 2px solid blue;
+      }
+
+      .aboutJapan h2 {
+        font-size: 40px;
+      }
+
+      .aboutJapan p {
+        text-align: center;
+        margin: 10px;
+        font-size: 18px;
+      }
+
+      .aboutJapanPhoto {
+        max-width: 100vh;
+        height: 500px;
+        width: 500px;
+      }
+
+      #dropdownBox {
+        height: 40px;
+        width: 120px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      #attractionGrid {
+        width: 300px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 15px;
+      }
+
+      #attractionGrid img {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+    <title>Japan: Dream Travel Destination</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="japan-website">
+        <div class="japan-header">
+          <h1>Japan</h1>
+          <div class="navigation-links">
+            <a href="index.html">Home</a>
+            <a href="#about-japan">About</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#plantrip">Plan A Trip</a>
+            <a href="#japangenerator">Help Me Decide!</a>
+          </div>
+        </div>
+
+        <div class="aboutJapan">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/827/original/aboutjapan-unsplash.jpg?1712257895"
+            class="aboutJapanPhoto"
+          />
+          <div class="aboutJapanDetails">
+            <h2 id="about-japan">About Japan</h2>
+            <p>
+              Japan is an island country in East Asia. It is in the northwest
+              Pacific Ocean and is bordered on the west by the Sea of Japan,
+              extending from the Sea of Okhotsk in the north toward the East
+              China Sea, Philippine Sea, and Taiwan in the south. Japan is a
+              part of the Ring of Fire, and spans an archipelago of 14,125
+              islands, with the five main islands being Hokkaido, Honshu (the
+              "mainland"), Shikoku, Kyushu, and Okinawa. Tokyo is the country's
+              capital and largest city, followed by Yokohama, Osaka, Nagoya,
+              Sapporo, Fukuoka, Kobe, and Kyoto.
+              <br />
+              <small>
+                Source by
+                <a href="https://en.wikipedia.org/wiki/Japan">Wikipedia</a>
+              </small>
+            </p>
+          </div>
+        </div>
+        <!-- destinations: tokyo, osaka, kyoto and hokkaido -->
+        <h2 id="destinations">Destinations</h2>
+        <select id="dropdownBox">
+          <option value="tokyo-dropdown">Tokyo</option>
+          <option value="osaka-dropdown">Osaka</option>
+          <option value="kyoto-dropdown">Kyoto</option>
+          <option value="hokkaido-dropdown">Hokkaido</option>
+        </select>
+        <div class="grid-container">
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504"
+            />
+            Tokyo DisneySea
+          </div>
+          <div id="attractionGrid">Imperial Palace</div>
+          <div id="attractionGrid">Sensō-ji</div>
+          <div id="attractionGrid">Hrajuku</div>
+          <div id="attractionGrid">Tsukiji Outer Market</div>
+          <div id="attractionGrid">Yoyogi Park</div>
+        </div>
+        <div class="destination-description">
+          <ul>
+            <li>Season: All</li>
+            <li>Best for: Families, Couples</li>
+            <li>Attractions: Shopping, Sightsee</li>
+          </ul>
+        </div>
+
+        <div class="grid-container">
+          <div id="attractionGrid">Universal Studios Japan</div>
+          <div id="attractionGrid">Osaka Castle</div>
+          <div id="attractionGrid">Dotonbori</div>
+          <div id="attractionGrid">Osaka Aquarium Kaiyukan</div>
+          <div id="attractionGrid">Shinsaibashi-Suji Shopping Street</div>
+          <div id="attractionGrid">Hozenji</div>
+        </div>
+        <div class="osaka-description">
+          <ul>
+            <li>Season: All</li>
+            <li>Best for: Families, Couples</li>
+            <li>Attractions: Shopping, Sightsee</li>
+          </ul>
+        </div>
+
+        <div class="grid-container">
+          <div id="attractionGrid">Fushimi Inari Taisha</div>
+          <div id="attractionGrid">Kinkaku-ji</div>
+          <div id="attractionGrid">Nijō Castle</div>
+          <div id="attractionGrid">Nishiki Market</div>
+          <div id="attractionGrid">Arashiyama</div>
+          <div id="attractionGrid">Arashiyama Bamboo Forest</div>
+        </div>
+        <div class="kyoto-description">
+          <ul>
+            <li>Season: All</li>
+            <li>Best for: Families, Couples</li>
+            <li>Attractions: Nature</li>
+          </ul>
+        </div>
+
+        <div class="grid-container">
+          <div id="attractionGrid">Niseko</div>
+          <div id="attractionGrid">Nikka Whisky Yoichi Distillery</div>
+          <div id="attractionGrid">Farm Tomita</div>
+          <div id="attractionGrid">Shirogane Blue Pond</div>
+          <div id="attractionGrid">Mt. Moiwa</div>
+          <div id="attractionGrid">Sapporo</div>
+        </div>
+        <div class="hokkaido-description">
+          <ul>
+            <li>Season: All</li>
+            <li>Best for: Families, Couples</li>
+            <li>Attractions: Nature</li>
+          </ul>
+        </div>
+
+        <h2 id="plantrip">Plan A Trip</h2>
+        <!-- insert links to skyscanner and booking? -->
+        <h2 id="japangenerator">Help Me Choose!</h2>
+        <footer>
+          Coded by
+          <a href="/">Isabelle Ang</a>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // random generator for selecting a city
+      // innerhtml change for each destinatinon + dropdown
+    </script>
+  </body>
+</html>
