@@ -3,9 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       :root {
-        --main-color: white;
+        --main-color: #e1b486;
+        --first-font: "Rubik Mono One", monospace;
+        --second-font: "Space Mono", monospace;
+      }
+
+      body {
+        background-color: var(--main-color);
       }
 
       .container {
@@ -17,12 +35,12 @@
       }
 
       .japan-website {
-        max-width: 1500px;
+        max-width: 1200px;
       }
 
       .japan-header {
         width: 100%;
-        height: 500px;
+        height: 450px;
         background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/830/original/japan-hero.jpg?1712258370");
         background-size: cover;
         background-position: center;
@@ -32,6 +50,7 @@
       h1 {
         font-size: 70px;
         padding: 80px;
+        font-family: var(--first-font);
       }
 
       .navigation-links {
@@ -39,6 +58,7 @@
         flex-direction: row;
         justify-content: space-evenly;
         margin-top: -50px;
+        font-family: var(--second-font);
       }
 
       .navigation-links a {
@@ -67,12 +87,15 @@
 
       .aboutJapan h2 {
         font-size: 40px;
+        font-family: var(--second-font);
       }
 
       .aboutJapan p {
         text-align: center;
         margin: 10px;
-        font-size: 18px;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: var(--second-font);
       }
 
       .aboutJapanPhoto {
@@ -162,11 +185,36 @@
             />
             Tokyo DisneySea
           </div>
-          <div id="attractionGrid">Imperial Palace</div>
-          <div id="attractionGrid">Sensō-ji</div>
-          <div id="attractionGrid">Hrajuku</div>
-          <div id="attractionGrid">Tsukiji Outer Market</div>
-          <div id="attractionGrid">Yoyogi Park</div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883"
+            />
+            Imperial Palace
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029"
+            />
+            Sensō-ji
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671"
+            />
+            Harajuku
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660"
+            />
+            Tsukiji Outer Market
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681"
+            />
+            Akihabara
+          </div>
         </div>
         <div class="destination-description">
           <ul>
