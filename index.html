@@ -17,7 +17,7 @@
 
     <style>
       :root {
-        --main-color: #e1b486;
+        --main-color: #c9c7bb;
         --first-font: "Rubik Mono One", monospace;
         --second-font: "Space Mono", monospace;
       }
@@ -97,7 +97,6 @@
         flex-direction: row;
         justify-content: space-evenly;
         border: 2px solid blue;
-        background-color: white;
       }
 
       .aboutJapanSection h2 {
@@ -117,6 +116,10 @@
         max-width: 100vh;
         height: 500px;
         width: 500px;
+      }
+
+      .destinationSection {
+        border: 2px solid purple;
       }
 
       #dropdownBox {
@@ -155,6 +158,10 @@
         height: 200px;
       }
 
+      .generatorSection {
+        border: 2px solid green;
+      }
+
       #generatorBtn {
         height: 40px;
         width: 150px;
@@ -163,6 +170,22 @@
         text-align: center;
         font-size: 16px;
         font-weight: bold;
+      }
+
+      #japangenerator {
+        text-transform: capitalize;
+        font-family: var(--second-font);
+        font-size: 30px;
+        text-decoration: underline;
+      }
+
+      #randomCity {
+        font-family: var(--second-font);
+        font-size: 30px;
+      }
+
+      .tripSection {
+        border: 2px solid black;
       }
     </style>
     <title>Japan: Dream Travel Destination</title>
@@ -205,68 +228,91 @@
             </small>
           </div>
         </div>
-        <!-- destinations: tokyo, osaka, kyoto and hokkaido -->
-        <h2 id="destinations">Destinations</h2>
-        <select id="dropdownBox" onchange="cityChange()">
-          <option value="tokyo-dropdown" id="tokyoDD">Tokyo</option>
-          <option value="osaka-dropdown" id="osakaDD">Osaka</option>
-          <option value="kyoto-dropdown" id="kyotoDD">Kyoto</option>
-          <option value="hokkaido-dropdown" id="hokkaidoDD">Hokkaido</option>
-        </select>
-        <div class="grid-container">
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504"
-            />
-            Tokyo DisneySea
+        <div class="generatorSection">
+          <h2 id="japangenerator">
+            Can't decide where to visit? Use our generator!
+          </h2>
+          <button id="generatorBtn" onclick="generateCity()">
+            Generate City
+          </button>
+          <h3 id="randomCity"></h3>
+        </div>
+        <div class="destinationSection">
+          <!-- destinations: tokyo, osaka, kyoto and hokkaido -->
+          <h2 id="destinations">Destinations</h2>
+          <select id="dropdownBox" onchange="cityChange()">
+            <option value="tokyoDropdown" id="tokyoDD">Tokyo</option>
+            <option value="osakaDropdown" id="osakaDD">Osaka</option>
+            <option value="kyotoDropdown" id="kyotoDD">Kyoto</option>
+            <option value="hokkaidoDropdown" id="hokkaidoDD">Hokkaido</option>
+          </select>
+          <div class="grid-container">
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504"
+              />
+              Tokyo DisneySea
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883"
+              />
+              Imperial Palace
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029"
+              />
+              Sensō-ji
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671"
+              />
+              Harajuku
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660"
+              />
+              Tsukiji Outer Market
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681"
+              />
+              Akihabara
+            </div>
           </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883"
-            />
-            Imperial Palace
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029"
-            />
-            Sensō-ji
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671"
-            />
-            Harajuku
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660"
-            />
-            Tsukiji Outer Market
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681"
-            />
-            Akihabara
+          <div class="destination-description">
+            <ul>
+              <li>Season: All</li>
+              <li>Best for: Families, Couples</li>
+              <li>Attractions: Shopping, Sightsee</li>
+            </ul>
           </div>
         </div>
-        <div class="destination-description">
-          <ul>
-            <li>Season: All</li>
-            <li>Best for: Families, Couples</li>
-            <li>Attractions: Shopping, Sightsee</li>
-          </ul>
+
+        <div class="tripSection">
+          <h2 id="plantrip">Plan A Trip</h2>
+          <div class="contactForm">
+            <div class="calendar">
+              <label for="datepicker">Select A Date</label>
+              <input type="date" id="datePicker"/>
+              </div>
+              <div class="reservation-name">
+                <form>
+                  <input type="text", placeholder="Name" id="reservationName"/>
+                  <input type="email", placeholder="Email Address" id="reservationEmail"/>
+
+                </form>
+              </div>
+            </div>
+            <button>
+              Let's go to Japan!
+            </button>
+          </div>
         </div>
-
-        <h2 id="plantrip">Plan A Trip</h2>
-        <!-- insert links to skyscanner and booking? -->
-        <h2 id="japangenerator">Help Me Choose!</h2>
-        <button id="generatorBtn" onclick="generateCity()">
-          Generate City
-        </button>
-        <h3 id="randomCity"></h3>
-
         <footer>
           Coded by
           <a href="/">Isabelle Ang</a>
@@ -287,56 +333,120 @@
         document.getElementById("randomCity").textContent = `${randomCity}`;
       }
 
-      // innerhtml change for each destinatinon + dropdown
-      function cityChange(event) {
-        let tokyoAttractions = document.querySelectorAll(".attractionGrid");
+      // define attractions
+      const attractions = {
+        tokyoDropdown: [
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504",
+            name: "Tokyo DisneySea",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883",
+            name: "Imperial Palace",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029",
+            name: "Sensō-ji",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671",
+            name: "Harajuku",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660",
+            name: "Tsukiji Outer Market",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681",
+            name: "Akihabara",
+          },
+        ],
+        osakaDropdown: [
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/862/original/usj.jpg?1712268229",
+            name: "Universal Studios Japan",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/863/original/osaka-castle.jpg?1712268339",
+            name: "Osaka Palace",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/859/original/dotonbori.jpg?1712268136",
+            name: "Dotonbori",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154",
+            name: "Osaka Aquarium",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781",
+            name: "Shinsaibashi-Suji Shopping Street",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752",
+            name: "Hozenji",
+          },
+        ],
+        kyotoDropdown: [
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/996/original/fushimi.jpg?1712340963",
+            name: "Fushimi Inari Taisha",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/997/original/kinkaku-ji.jpg?1712340975",
+            name: "Kinkaku-ji",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/998/original/nijo%CC%84-castle.jpg?1712341219",
+            name: "Nijō Castle",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154",
+            name: "Osaka Aquarium",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781",
+            name: "Shinsaibashi-Suji Shopping Street",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752",
+            name: "Hozenji",
+          },
+        ],
+        hokkaidoDropdown: [
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/996/original/fushimi.jpg?1712340963",
+            name: "Fushimi Inari Taisha",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/997/original/kinkaku-ji.jpg?1712340975",
+            name: "Kinkaku-ji",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/998/original/nijo%CC%84-castle.jpg?1712341219",
+            name: "Nijō Castle",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154",
+            name: "Osaka Aquarium",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781",
+            name: "Shinsaibashi-Suji Shopping Street",
+          },
+          {
+            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752",
+            name: "Hozenji",
+          },
+        ],
+      };
 
-        //loop through each attraction grid and update its content
-        attractionGrids.forEach(function (grid) {
-          tokyoAttractions.innerHTML = ` <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504"
-            />
-            Tokyo DisneySea
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883"
-            />
-            Imperial Palace
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029"
-            />
-            Sensō-ji
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671"
-            />
-            Harajuku
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660"
-            />
-            Tsukiji Outer Market
-          </div>
-          <div id="attractionGrid">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681"
-            />
-            Akihabara
-          </div>
-        </div>
-        <div class="destination-description">
-          <ul>
-            <li>Season: All</li>
-            <li>Best for: Families, Couples</li>
-            <li>Attractions: Shopping, Sightsee</li>
-          </ul>
-        </div>`;
-        });
+      // function for innerhtml change
+      function cityChange() {
+        let selectedCity = document.getElementById("dropdownBox").value;
+        let attractionGridContainer = document.querySelector(".attractionGrid");
+
+        attractions[selectedCity].forEach(attractions);
       }
     </script>
   </body>
