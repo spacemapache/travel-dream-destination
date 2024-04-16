@@ -354,7 +354,7 @@
         </div>
 
         <div class="tripSection">
-          <h2 id="plantrip">Plan A Trip</h2>
+          <h2 id="plantrip">Book A Trip</h2>
           <div class="contactForm">
             <div class="calendar">
               <label for="datepicker">Select A Date</label>
@@ -377,7 +377,7 @@
          </div>
         <footer>
           Coded by
-          <a href="/">Isabelle Ang</a>
+          <a href="https://github.com/spacemapache/travel-dream-destination">Isabelle Ang</a>
         </footer>
       </div>
     </div>
@@ -396,10 +396,21 @@
       }
 
       // plan a trip section
-      function submitBtn() {
-        event.preventDefault();
-        alert("We will be in touch shortly!");
+
+    function submitBtn() {
+      event.preventDefault();
+      
+      let name = document.getElementById("reservationName").value.trim();
+      let email = document.getElementById("reservationEmail").value.trim();
+
+      if (name == "" || email == "" ) {
+        alert("Name and email must be filled out");
+        return false;
+      } else {
+        alert("We have received your request and will be in touch shortly");
       }
+      }
+
 
 
       // define attractions
