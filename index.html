@@ -70,9 +70,11 @@
         font-weight: bold;
       }
 
+      /* about japan section */
+
       .aboutJapanDetails {
         margin: 10px;
-        border: 2px solid red;
+        
       }
 
       .aboutJapanDetails small {
@@ -89,14 +91,14 @@
 
       .aboutJapanSection img {
         margin: 30px;
-        border: 2px solid red;
+        
       }
 
       .aboutJapanSection {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        border: 2px solid blue;
+        border: 2px solid rgba(0, 0, 0, 0.757);
       }
 
       .aboutJapanSection h2 {
@@ -119,14 +121,15 @@
       }
 
       .destinationSection {
-        border: 2px solid purple;
+        border: 2px solid rgba(0, 0, 0, 0.757);
       }
 
       #dropdownBox {
         height: 40px;
         width: 110px;
-        background-color: hsla(0, 72%, 49%, 0.695);
-        border: none;
+        background-color: hsla(315, 75%, 54%, 0.695);
+        border: 1px solid black;
+        border-radius: 5px;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
         text-align: center;
         font-size: 16px;
@@ -159,7 +162,7 @@
       }
 
       .generatorSection {
-        border: 2px solid green;
+        border: 2px solid rgba(0, 0, 0, 0.757);
       }
 
       #generatorBtn {
@@ -184,9 +187,66 @@
         font-size: 30px;
       }
 
+      /* plan a trip section */
+
       .tripSection {
         border: 2px solid black;
+        padding-bottom: 20px;
       }
+
+      .tripSection h2 {
+        font-family: var(--second-font);
+        font-size: 30px;
+      }
+
+      .calendar {
+        margin: 10px;
+        font-family: var(--second-font);
+        font-size: 13px;;
+        font-weight: bold;
+        
+      }
+
+      .reservation-name {
+        margin: 10px;
+      }
+
+      #reservationName, #reservationEmail {
+        font-family: var(--second-font);
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        height: 40px;
+        width: 165px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+        background-color: hsla(315, 75%, 54%, 0.695);
+        border: 1px solid black;
+        font-family: var(--second-font);
+        font-weight: bold;
+      }
+
+      button :hover {
+        cursor: pointer;
+      }
+
+      footer {
+        font-family: var(--second-font);
+        font-size: 11px;
+        margin-top: 10px;
+      }
+
+      
+
+      footer a {
+        text-decoration: none;
+        color: black;
+      }
+
+
+      
     </style>
     <title>Japan: Dream Travel Destination</title>
   </head>
@@ -299,20 +359,22 @@
             <div class="calendar">
               <label for="datepicker">Select A Date</label>
               <input type="date" id="datePicker"/>
-              </div>
+              
               <div class="reservation-name">
                 <form>
                   <input type="text", placeholder="Name" id="reservationName"/>
                   <input type="email", placeholder="Email Address" id="reservationEmail"/>
 
                 </form>
+               </div>
               </div>
             </div>
-            <button>
+            <button onclick="submitBtn()">
               Let's go to Japan!
             </button>
-          </div>
+          
         </div>
+         </div>
         <footer>
           Coded by
           <a href="/">Isabelle Ang</a>
@@ -332,6 +394,13 @@
         // display the city
         document.getElementById("randomCity").textContent = `${randomCity}`;
       }
+
+      // plan a trip section
+      function submitBtn() {
+        event.preventDefault();
+        alert("We will be in touch shortly!");
+      }
+
 
       // define attractions
       const attractions = {
