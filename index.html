@@ -18,6 +18,7 @@
     <style>
       :root {
         --main-color: #c9c7bb;
+        --second-color: rgba(255, 255, 255, 0.83);
         --first-font: "Rubik Mono One", monospace;
         --second-font: "Space Mono", monospace;
       }
@@ -32,10 +33,12 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        
       }
 
       .japan-website {
         max-width: 1200px;
+        
       }
 
       .japan-header {
@@ -74,7 +77,6 @@
 
       .aboutJapanDetails {
         margin: 10px;
-        
       }
 
       .aboutJapanDetails small {
@@ -91,19 +93,21 @@
 
       .aboutJapanSection img {
         margin: 30px;
-        
       }
 
       .aboutJapanSection {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        border: 2px solid rgba(0, 0, 0, 0.757);
+        background-color: var(--second-color)
       }
 
       .aboutJapanSection h2 {
         font-size: 40px;
         font-family: var(--second-font);
+        background-color: var(--main-color);
+        opacity: 0.8;
+        border: 1px solid black;
       }
 
       .aboutJapanSection p {
@@ -120,11 +124,19 @@
         width: 500px;
       }
 
+      /* destionation section */
+
       .destinationSection {
-        border: 2px solid rgba(0, 0, 0, 0.757);
+        background-color: rgba(255, 255, 255, 0.83);
+        font-family: var(--second-font);
+        font-size: 14px;
+        font-weight: bold;
+        padding: 30px;
+
+        
       }
 
-      #dropdownBox {
+      #citySelect {
         height: 40px;
         width: 110px;
         background-color: hsla(315, 75%, 54%, 0.695);
@@ -141,6 +153,7 @@
       #destinations {
         font-family: var(--second-font);
         font-size: 30px;
+        
       }
 
       .grid-container {
@@ -161,8 +174,19 @@
         height: 200px;
       }
 
+      .destination-description p {
+        font-size: 13px;
+       margin-top: 35px;
+       font-weight: 300;
+       text-align: center;
+      }
+
+      /* generator */
+
       .generatorSection {
-        border: 2px solid rgba(0, 0, 0, 0.757);
+        background-color: var(--second-color);
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       #generatorBtn {
@@ -190,8 +214,8 @@
       /* plan a trip section */
 
       .tripSection {
-        border: 2px solid black;
-        padding-bottom: 20px;
+        padding: 20px;
+        background-color: var(--second-color);
       }
 
       .tripSection h2 {
@@ -202,16 +226,16 @@
       .calendar {
         margin: 10px;
         font-family: var(--second-font);
-        font-size: 13px;;
+        font-size: 13px;
         font-weight: bold;
-        
       }
 
       .reservation-name {
         margin: 10px;
       }
 
-      #reservationName, #reservationEmail {
+      #reservationName,
+      #reservationEmail {
         font-family: var(--second-font);
         border-radius: 5px;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -238,15 +262,10 @@
         margin-top: 10px;
       }
 
-      
-
       footer a {
         text-decoration: none;
         color: black;
       }
-
-
-      
     </style>
     <title>Japan: Dream Travel Destination</title>
   </head>
@@ -300,13 +319,13 @@
         <div class="destinationSection">
           <!-- destinations: tokyo, osaka, kyoto and hokkaido -->
           <h2 id="destinations">Destinations</h2>
-          <select id="dropdownBox" onchange="cityChange()">
-            <option value="tokyoDropdown" id="tokyoDD">Tokyo</option>
-            <option value="osakaDropdown" id="osakaDD">Osaka</option>
-            <option value="kyotoDropdown" id="kyotoDD">Kyoto</option>
-            <option value="hokkaidoDropdown" id="hokkaidoDD">Hokkaido</option>
+          <select id="citySelect" onchange="updateContent()">
+            <option value="tokyo" id="tokyoDD">Tokyo</option>
+            <option value="osaka" id="osakaDD">Osaka</option>
+            <option value="kyoto" id="kyotoDD">Kyoto</option>
+            <option value="hokkaido" id="hokkaidoDD">Hokkaido</option>
           </select>
-          <div class="grid-container">
+          <div class="grid-container" id="gridContainer">
             <div id="attractionGrid">
               <img
                 src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504"
@@ -344,40 +363,41 @@
               Akihabara
             </div>
           </div>
-          <div class="destination-description">
-            <ul>
-              <li>Season: All</li>
-              <li>Best for: Families, Couples</li>
-              <li>Attractions: Shopping, Sightsee</li>
-            </ul>
           </div>
-        </div>
 
-        <div class="tripSection">
-          <h2 id="plantrip">Book A Trip</h2>
-          <div class="contactForm">
-            <div class="calendar">
-              <label for="datepicker">Select A Date</label>
-              <input type="date" id="datePicker"/>
-              
-              <div class="reservation-name">
-                <form>
-                  <input type="text", placeholder="Name" id="reservationName"/>
-                  <input type="email", placeholder="Email Address" id="reservationEmail"/>
+          <div class="tripSection">
+            <h2 id="plantrip">Book A Trip</h2>
+            <div class="contactForm">
+              <div class="calendar">
+                <label for="datepicker">Select A Date</label>
+                <input type="date" id="datePicker" />
 
-                </form>
-               </div>
+                <div class="reservation-name">
+                  <form>
+                    <input
+                      type="text"
+                      ,
+                      placeholder="Name"
+                      id="reservationName"
+                    />
+                    <input
+                      type="email"
+                      ,
+                      placeholder="Email Address"
+                      id="reservationEmail"
+                    />
+                  </form>
+                </div>
               </div>
             </div>
-            <button onclick="submitBtn()">
-              Let's go to Japan!
-            </button>
-          
+            <button onclick="submitBtn()">Let's go to Japan!</button>
+          </div>
         </div>
-         </div>
         <footer>
           Coded by
-          <a href="https://github.com/spacemapache/travel-dream-destination">Isabelle Ang</a>
+          <a href="https://github.com/spacemapache/travel-dream-destination"
+            >Isabelle Ang</a
+          >
         </footer>
       </div>
     </div>
@@ -397,136 +417,187 @@
 
       // plan a trip section
 
-    function submitBtn() {
-      event.preventDefault();
-      
-      let name = document.getElementById("reservationName").value.trim();
-      let email = document.getElementById("reservationEmail").value.trim();
+      function submitBtn() {
+        event.preventDefault();
 
-      if (name == "" || email == "" ) {
-        alert("Name and email must be filled out");
-        return false;
-      } else {
-        alert("We have received your request and will be in touch shortly");
+        let name = document.getElementById("reservationName").value.trim();
+        let email = document.getElementById("reservationEmail").value.trim();
+
+        if (name == "" || email == "") {
+          alert("Name and email must be filled out");
+          return false;
+        } else {
+          alert("We have received your request and will be in touch shortly");
+        }
       }
-      }
 
+      function updateContent() {
+        // get the selected value from the dropdown
+        var selectedCity = document.getElementById("citySelect").value;
 
-
-      // define attractions
-      const attractions = {
-        tokyoDropdown: [
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504",
-            name: "Tokyo DisneySea",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883",
-            name: "Imperial Palace",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029",
-            name: "Sensō-ji",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671",
-            name: "Harajuku",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660",
-            name: "Tsukiji Outer Market",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681",
-            name: "Akihabara",
-          },
-        ],
-        osakaDropdown: [
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/862/original/usj.jpg?1712268229",
-            name: "Universal Studios Japan",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/863/original/osaka-castle.jpg?1712268339",
-            name: "Osaka Palace",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/859/original/dotonbori.jpg?1712268136",
-            name: "Dotonbori",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154",
-            name: "Osaka Aquarium",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781",
-            name: "Shinsaibashi-Suji Shopping Street",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752",
-            name: "Hozenji",
-          },
-        ],
-        kyotoDropdown: [
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/996/original/fushimi.jpg?1712340963",
-            name: "Fushimi Inari Taisha",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/997/original/kinkaku-ji.jpg?1712340975",
-            name: "Kinkaku-ji",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/998/original/nijo%CC%84-castle.jpg?1712341219",
-            name: "Nijō Castle",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154",
-            name: "Osaka Aquarium",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781",
-            name: "Shinsaibashi-Suji Shopping Street",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752",
-            name: "Hozenji",
-          },
-        ],
-        hokkaidoDropdown: [
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/996/original/fushimi.jpg?1712340963",
-            name: "Fushimi Inari Taisha",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/997/original/kinkaku-ji.jpg?1712340975",
-            name: "Kinkaku-ji",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/998/original/nijo%CC%84-castle.jpg?1712341219",
-            name: "Nijō Castle",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154",
-            name: "Osaka Aquarium",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781",
-            name: "Shinsaibashi-Suji Shopping Street",
-          },
-          {
-            src: "https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752",
-            name: "Hozenji",
-          },
-        ],
-      };
-
-      // function for innerhtml change
-      function cityChange() {
-        let selectedCity = document.getElementById("dropdownBox").value;
-        let attractionGridContainer = document.querySelector(".attractionGrid");
-
-        attractions[selectedCity].forEach(attractions);
+        // update the content based on the selected value
+        var contentDiv = document.getElementById("gridContainer");
+        if (selectedCity === "tokyo") {
+          contentDiv.innerHTML = `     
+          <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/844/original/tokyo-disneysea.jpg?1712264504"
+              />
+              Tokyo DisneySea
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/847/original/imperial-palace.jpg?1712264883"
+              />
+              Imperial Palace
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/849/original/sensoji.jpg?1712265029"
+              />
+              Sensō-ji
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/852/original/harajuku.jpg?1712265671"
+              />
+              Harajuku
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/851/original/tsukijimarket.jpg?1712265660"
+              />
+              Tsukiji Outer Market
+            </div>
+            <div id="attractionGrid">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/853/original/akihbara.jpg?1712265681"
+              />
+              Akihabara
+            </div>
+            </div>
+          <div class="destination-description">
+           <p>
+            Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum)
+           </p>
+          </div>`;
+        } else if (selectedCity === "osaka") {
+          contentDiv.innerHTML = `  
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/862/original/usj.jpg?1712268229"
+            />
+            Universal Studios Japan
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/863/original/osaka-castle.jpg?1712268339"
+            />
+            Osaka Castle
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/859/original/dotonbori.jpg?1712268136"
+            />
+            Dotonbori
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/860/original/osaka-aquarium.jpg?1712268154"
+            />
+            Osaka Aquarium Kaiyukan
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/995/original/shinsaibashisuji.jpg?1712340781"
+            />
+            Shinsaibashi-Suji Shopping Street
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/994/original/Hozenji.jpg?1712340752"
+            />
+            Hozenji
+          </div>
+        </div>
+        <div class="destination-description">
+          <p>
+            Osaka is a large port city and commercial center on the Japanese island of Honshu. It's known for its modern architecture, nightlife and hearty street food. The 16th-century shogunate Osaka Castle, which has undergone several restorations, is its main historical landmark. It's surrounded by a moat and park with plum, peach and cherry-blossom trees. Sumiyoshi-taisha is among Japan’s oldest Shinto shrines
+            </p>
+        </div>`;
+        } else if (selectedCity === "kyoto") {
+          contentDiv.innerHTML = ` 
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/996/original/fushimi.jpg?1712340963"
+            />
+            Fushimi Inari Taisha
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/997/original/kinkaku-ji.jpg?1712340975"
+            />
+            Kinkaku-ji
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/998/original/nijo%CC%84-castle.jpg?1712341219"
+            />
+            Nijō Castle
+          </div>
+          <div id="attractionGrid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/558/original/nishiki-market.jpg?1713376129">
+            Nishiki Market</div>
+          
+          <div id="attractionGrid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/559/original/gion.jpg?1713376141">
+            Gion</div>
+          <div id="attractionGrid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/560/original/Arashiyama.jpg?1713376151">
+            Arashiyama Bamboo Forest</div>
+        </div>
+        </div>
+        <div class="destination-description">
+          <p>
+            Kyoto, once the capital of Japan, is a city on the island of Honshu. It's famous for its numerous classical Buddhist temples, as well as gardens, imperial palaces, Shinto shrines and traditional wooden houses. It’s also known for formal traditions such as kaiseki dining, consisting of multiple courses of precise dishes, and geisha, female entertainers often found in the Gion district.
+            </p>
+        </div> `;
+        } else if (selectedCity === "hokkaido") {
+          contentDiv.innerHTML = `<div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/996/original/fushimi.jpg?1712340963"
+            />
+            Odori Park
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/566/original/niseko-hirafu.jpeg?1713376970"
+            />
+            Niseko Tokyu Grand Hirafu
+          </div>
+          <div id="attractionGrid">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/563/original/blue-pond.jpg?1713376924"
+            />
+            Shirogane Blue Pond
+          </div>
+          <div id="attractionGrid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/565/original/Goryo%CC%84kaku.jpeg?1713376962">
+            Goryōkaku</div>
+          <div id="attractionGrid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/567/original/Shiretoko-NationalPark.jpeg?1713376976">
+            Shiretoko National Park</div>
+          <div id="attractionGrid">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/564/original/furano-ski.jpeg?1713376952">
+            Furano ski resort</div>
+        </div>
+        </div>
+        <div class="destination-description">
+          <p>
+            Hokkaido, the northernmost of Japan’s main islands, is known for its volcanoes, natural hot springs (onsen) and ski areas. Rugged Daisetsuzan National Park is home to steaming, volcanic Mount Asahi. Shikotsu-Tōya National Park contains caldera lakes, geothermal springs and a Mount Fuji look-alike, Mount Yōtei. Popular ski resorts include Rusutsu, Furano and Niseko.
+            </p>
+        </div> `;
+        }
       }
     </script>
   </body>
