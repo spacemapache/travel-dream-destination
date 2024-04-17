@@ -99,7 +99,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        background-color: var(--second-color)
+        background-color: var(--second-color);
       }
 
       .aboutJapanSection h2 {
@@ -131,9 +131,7 @@
         font-family: var(--second-font);
         font-size: 14px;
         font-weight: bold;
-        padding: 30px;
-
-        
+        padding: 25px;
       }
 
       #citySelect {
@@ -153,6 +151,10 @@
       #destinations {
         font-family: var(--second-font);
         font-size: 30px;
+        background-color: black;
+        opacity: 0.8;
+        color: white;
+        border: 1px solid black;
         
       }
 
@@ -183,10 +185,18 @@
 
       /* generator */
 
-      .generatorSection {
+      .generator {
         background-color: var(--second-color);
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px;
+        
+      }
+
+      .generatorSection h2 {
+        background-color: black;
+        opacity: 0.8;
+        color: white;
+        border: 1px solid black;
+        
       }
 
       #generatorBtn {
@@ -203,8 +213,8 @@
         text-transform: capitalize;
         font-family: var(--second-font);
         font-size: 30px;
-        text-decoration: underline;
       }
+
 
       #randomCity {
         font-family: var(--second-font);
@@ -221,6 +231,10 @@
       .tripSection h2 {
         font-family: var(--second-font);
         font-size: 30px;
+        background-color: black;
+        opacity: 0.8;
+        color: white;
+        border: 1px solid black;
       }
 
       .calendar {
@@ -307,7 +321,8 @@
             </small>
           </div>
         </div>
-        <div class="generatorSection">
+        <div class="generator">
+          <div class="generatorSection">
           <h2 id="japangenerator">
             Can't decide where to visit? Use our generator!
           </h2>
@@ -315,6 +330,7 @@
             Generate City
           </button>
           <h3 id="randomCity"></h3>
+        </div>
         </div>
         <div class="destinationSection">
           <!-- destinations: tokyo, osaka, kyoto and hokkaido -->
