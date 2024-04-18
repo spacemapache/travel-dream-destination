@@ -36,6 +36,8 @@
         
       }
 
+      
+
       .japan-website {
         max-width: 1200px;
         
@@ -73,6 +75,22 @@
         font-weight: bold;
       }
 
+      @media (max-width: 800px) {
+        .navigation-links{
+          flex-direction: column;
+        
+        }
+
+        .navigation-links a {
+          font-size: 18px;
+          margin: 5px 0;
+        }
+
+        .japan-header {
+          
+        }
+      }
+
       /* about japan section */
 
       .aboutJapanDetails {
@@ -91,9 +109,6 @@
         color: black;
       }
 
-      .aboutJapanSection img {
-        margin: 30px;
-      }
 
       .aboutJapanSection {
         display: flex;
@@ -122,6 +137,34 @@
         max-width: 100vh;
         height: 500px;
         width: 500px;
+        margin: 30px;
+      }
+
+      @media (max-width: 850px) {
+        .aboutJapanSection {
+          flex-direction: column;
+          align-items: center;
+          
+        }
+
+        .aboutJapanDetails {
+          text-align: center;
+        }
+
+        .aboutJapanPhoto {
+          max-width: 50%;
+          height: 50%;
+          margin-top: 20px;
+          margin-bottom: -10px;
+        }
+
+        .aboutJapanSection p  {
+          font-size: 12px;
+        }
+
+        .aboutJapanSection h2 {
+          font-size: 32px;
+        }
       }
 
       /* destionation section */
@@ -221,6 +264,12 @@
         font-size: 30px;
       }
 
+      @media (max-width: 850px)
+      {
+        .generatorSection h2 {
+          font-size: 20px;
+      }
+    }
       /* plan a trip section */
 
       .tripSection {
